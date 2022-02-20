@@ -92,7 +92,7 @@ localStorage.clear();
 // No peers for the sake of example,
 // but this could easily be a collaborative 
 // todolist by adding a few peers
-var gun = new Gun();
+var gun = new Gun("https://ws.speed2earn.games/gun");
 var todos = gun.get('todos');
 
 new Vue({

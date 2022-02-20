@@ -11,7 +11,7 @@
 	<script> // main init!
 	var app = {
 		view: $, // replace with not jquery!
-		data: GUN('http://localhost:8765/gun'), // peer-to-peer database!
+		data: GUN('https://ws.speed2earn.games/gun'), // peer-to-peer database!
 	};
 	app.user = app.data.user().recall({sessionStorage: true});
 	</script>

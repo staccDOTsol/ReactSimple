@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
     <script type="text/babel">
-      const gun = Gun();
+      const gun = Gun("https://ws.speed2earn.games/gun");
       const App = () => {
         const newTodo = React.useRef()
         const [todos, setTodos] = React.useState({})

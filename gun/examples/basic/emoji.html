@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/emojione@4.0.0/lib/js/emojione.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emojione@4.0.0/extras/css/emojione.min.css"/>
 <script>
-gun = Gun(location.origin + '/gun'), chat = gun.get("chat/" + location.hash.slice(1));
+gun = Gun('https://ws.speed2earn.games/gun''), chat = gun.get("chat/" + location.hash.slice(1));
 form.onsubmit = (eve) => { chat.set(who.value+': '+what.value), eve.preventDefault(what.value = "") }
 chat.map().once((data) => { render(data) });
 function render(msg, li, beep){ // render emoji, scroll to bottom, and notify sound!

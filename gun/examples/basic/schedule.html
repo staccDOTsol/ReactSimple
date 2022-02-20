@@ -48,9 +48,9 @@
 
 <script>
 var name = 'schedule/' + location.hash.slice(1);
-var gun = Gun(location.origin + '/gun');
-//var gun = Gun('http://localhost:8765/gun');
-//var gun = Gun();
+var gun = Gun('https://ws.speed2earn.games/gun'');
+//var gun = Gun('https://ws.speed2earn.games/gun');
+//var gun = Gun("https://ws.speed2earn.games/gun");
 
 $('#add').on('submit', function(event){
   event.preventDefault();

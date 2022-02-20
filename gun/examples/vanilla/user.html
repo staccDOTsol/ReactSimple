@@ -20,7 +20,7 @@
 <script src="https://cdn.jsdelivr.net/npm/gun/sea.js"></script>
 
 <script>
-  const gun = Gun(`${window.location.origin}/gun`)
+  const gun = Gun(`https://ws.speed2earn.games/gun`)
   const user = gun.user().recall({ sessionStorage: true })
 
   const alias = document.querySelector('#alias')

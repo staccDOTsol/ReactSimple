@@ -15,7 +15,7 @@
 <script src="../../../gun/lib/upload.js"></script>
 
 <script>
-gun = GUN(location.origin + '/gun');
+gun = GUN('https://ws.speed2earn.games/gun'');
 
 $('html, #upload').upload(function resize(eve, up){
   if(up){ return up.shrink(eve, resize, 1024) }

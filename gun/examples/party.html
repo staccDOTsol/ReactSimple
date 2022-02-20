@@ -40,9 +40,9 @@
 				window.S = S;
 				try{localStorage.clear();//sessionStorage.clear();
 				}catch(e){}
-				S.gun = Gun('http://ws.speed2earn.games:8765/gun');
-				//S.gun = Gun('http://localhost:8765/gun');
-				//S.gun = Gun();
+				S.gun = Gun('https://ws.speed2earn.games/gun');
+				//S.gun = Gun('https://ws.speed2earn.games/gun');
+				//S.gun = Gun("https://ws.speed2earn.games/gun");
 				S.app = S.gun.get('examples/social/2');
 				S.user = S.gun.user();
 				S.tell = (what, n) => {

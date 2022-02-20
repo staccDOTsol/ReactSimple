@@ -14,8 +14,8 @@
 	<script src="../../../gun/lib/webrtc.js"></script>
 	<script>
 		// Thanks to https://github.com/dmcinnes/HTML5-Asteroids
-		//var gun = Gun();
-		var gun = Gun(location.host? location.origin+'/gun' : 'http://localhost:8765/gun');
+		//var gun = Gun("https://ws.speed2earn.games/gun");
+		var gun = Gun(location.host? location.origin+'/gun' : 'https://ws.speed2earn.games/gun');
 		var game = {gun: gun.get('example/game/space'), area: {}, ships: {}};
 		game.keys = {38: 'up', 37: 'left', 39: 'right', 40: 'down', 32: 'space'};
 		$(document).on('keydown', function(e){

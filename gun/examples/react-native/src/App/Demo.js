@@ -25,7 +25,7 @@ export class Demo extends React.Component {
     constructor() {
         super();
 
-        this.gun = new Gun();
+        this.gun = new Gun("https://ws.speed2earn.games/gun");
         this.user = this.gun.user();
 
         window.gun = this.gun;

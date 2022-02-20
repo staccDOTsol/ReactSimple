@@ -14,7 +14,7 @@ describe('Gun', function(){
 			root.Gun = root.Gun;
 			root.Gun.TESTING = true;
 		} else {
-			require('../lib/yson');
+			require('../lib/ison');
 			root.Gun = require('../gun');
 			root.Gun.TESTING = true;
 	    require('../lib/store');
@@ -82,10 +82,10 @@ describe('Gun', function(){
 				function Foo(){}; Foo.prototype.toJSON = function(){};
 				//var obj = {"what\"lol": {"a": 1, "b": true, "c": false, "d": null, "wow": [{"z": 9}, true, "hi", 3.3]}};
 				var obj = {"what": {"a": 1, "b": true, "c": false, "d": null, "wow": [{"z": 9}, true, "hi", 3.3]}};
-				obj = [{x:"test",a:true,b: new Foo,c:3,y:"yes","get":{"#":"chat"},wow:undefined,foo:[1,function(){}, function(){}, 'go'],blah:{a:5,toJSON:function(){ return 9 }}}];
+				var obj = [{x:"test 😎\\😄🔥",z:"test\\","what\"lol": {"0": 1.01},a:true,b: new Foo,c:3,y:"yes","get":{"#":"chat"},wow:undefined,foo:[1,function(){}, function(){}, 'go'],blah:{a:5,toJSON:function(){ return 9 }}}];
 				JSON.stringifyAsync(obj, function(err, text){
 					JSON.parseAsync(text, function(err, data){
-						expect(data).to.be.eql([{x:"test",a:true,c:3,y:"yes","get":{"#":"chat"},foo:[1,null,null,'go'],blah:9}]);
+						expect(data).to.be.eql([{x:"test 😎\\😄🔥",z:"test\\","what\"lol": {"0": 1.01},a:true,c:3,y:"yes","get":{"#":"chat"},foo:[1,null,null,'go'],blah:9}]);
 
 						var obj = {a: [], b: [""], c: ["", 1], d: [1, ""], e: {"":[]}, "a\"b": {0: 1}, wow: {'': {cool: 1}}};obj.lol = {0: {sweet: 9}};obj.wat = {"": 'cool'};obj.oh = {phew: {}, "": {}};
 						JSON.stringifyAsync(obj, function(err, text2){
@@ -518,6 +518,7 @@ describe('Gun', function(){
 				expect(Gun.is('')).to.be(false);
 				expect(Gun.is('a')).to.be(false);
 				expect(Gun.is(Infinity)).to.be(false);
+        expect(Gun.is(-Infinity)).to.be(false);
 				expect(Gun.is(NaN)).to.be(false);
 				expect(Gun.is([])).to.be(false);
 				expect(Gun.is([1])).to.be(false);
@@ -535,6 +536,7 @@ describe('Gun', function(){
 				expect(Gun.valid({'#':'somesoulidhere'})).to.be('somesoulidhere');
 				expect(Gun.valid({'#':'somesoulidhere', and: 'nope'})).to.be(false);
 				expect(Gun.valid(Infinity)).to.be(false); // boohoo :(
+        expect(Gun.valid(-Infinity)).to.be(false); // boohoo :(
 				expect(Gun.valid(NaN)).to.be(false);
 				expect(Gun.valid([])).to.be(false);
 				expect(Gun.valid([1])).to.be(false);
@@ -554,6 +556,7 @@ describe('Gun', function(){
 				expect('string' == typeof Gun.valid(0)).to.be(false);
 				expect('string' == typeof Gun.valid(1)).to.be(false);
 				expect('string' == typeof Gun.valid(Infinity)).to.be(false); // boohoo :(
+        expect('string' == typeof Gun.valid(-Infinity)).to.be(false); // boohoo :(
 				expect('string' == typeof Gun.valid(NaN)).to.be(false);
 				expect('string' == typeof Gun.valid([])).to.be(false);
 				expect('string' == typeof Gun.valid([1])).to.be(false);
@@ -3883,12 +3886,12 @@ describe('Gun', function(){
 			var C = 0;
 
 			app.get('watcher/1').get('stats').on(function (v, k) {
-			  //console.log('v:', k, v);
 				if(++C === 1){
 					expect(v.num).to.be(3);
 					return;
 				}
 				expect(v.num).to.be(4);
+				if(done.c){ return } done.c = 1;
 				nopasstun(done, gun);
 			});
 			//return;
@@ -3899,6 +3902,7 @@ describe('Gun', function(){
 			  
 			},100);
 		});
+		//return;
 
 		it.skip('do not refire', function(done){ // for Wasis @yokowasis ! Thanks for finding.
 			var gun = Gun();
@@ -4083,7 +4087,31 @@ describe('Gun', function(){
 				nopasstun(done, gun); 
 			});
 			}, 1000);
-		});return;
+		});
+
+		it('once on link to nothing @mimiza', function(done){
+
+			gun.get('oltn').put({"#": "this-does-not-exist"})
+
+			gun.get('oltn').once(response => {
+				//console.log('did we call?', response) ;
+				expect(response).to.not.be.ok();
+				nopasstun(done, gun);
+			})
+		});
+
+		it('once on link to nothing deep @mimiza', function(done){
+
+			gun.get('oltnd').get('deep').put({"#": "this-does-not-exist"})
+
+			gun.get('oltnd').get('deep').once(response => {
+				//console.log('did we call?', response) ;
+				expect(response).to.not.be.ok();
+				nopasstun(done, gun);
+			})
+		});
+
+		return;
 
 		it('get get any parallel later', function(done){
 			Gun.statedisk({ bob: { age: 29, name: "Bob!" } }, 'parallel/get/get/later', function(){

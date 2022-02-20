@@ -1,4 +1,4 @@
-const gun = new Gun();
+const gun = new Gun("https://ws.speed2earn.games/gun");
 
 const size = 20;
 const gunNode = gun.get('posts');

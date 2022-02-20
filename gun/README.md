@@ -7,7 +7,7 @@
 
 **GUN** is an [ecosystem](https://gun.eco/docs/Ecosystem) of **tools** that let you build [community run](https://www.nbcnews.com/tech/tech-news/these-technologists-think-internet-broken-so-they-re-building-another-n1030136) and [encrypted applications](https://gun.eco/docs/Cartoon-Cryptography) - like an Open Source Firebase or a Decentralized Dropbox.
 
-The [Internet Archive](https://news.ycombinator.com/item?id=17685682), [HackerNoon](https://www.coindesk.com/hacker-noon-is-storing-content-on-a-blockchain-after-ditching-medium), and [100s of other apps](https://github.com/amark/gun/wiki/awesome-gun) run GUN in-production. GUN is also part of [Twitter's Bluesky](https://blueskycommunity.net/) initiative!
+The [Internet Archive](https://news.ycombinator.com/item?id=17685682) and [100s of other apps](https://github.com/amark/gun/wiki/awesome-gun) run GUN in-production. GUN is also part of [Twitter's Bluesky](https://blueskycommunity.net/) initiative!
 
  + Multiplayer by default with realtime p2p state synchronization!
  + Graph data let's you use key/value, tables, documents, videos, & more!
@@ -76,7 +76,7 @@ gun.get('mark').put(mark);
 
 // access the data as if it is a document.
 gun.get('mark').get('boss').get('name').once(function(data, key){
-  // `val` grabs the data once, no subscriptions.
+  // `once` grabs the data once, no subscriptions.
   console.log("Mark's boss is", data);
 });
 
@@ -121,6 +121,8 @@ Thanks to:
 <td vlign="center"><a href="https://mozilla.org/builders"><img height="100" src="https://user-images.githubusercontent.com/1423657/81992335-85346480-9643-11ea-8754-8275e98e06bc.png"></a></td>
 <td vlign="center"><a href="http://unstoppabledomains.com/"><img src="https://gun.eco/img/unstoppable.png"></a></td>
 <td vlign="center"><a href="https://www.ajar.org/"><img src="https://www.ajar.org/logo.png" width="200"></a></td>
+<td vlign="center"><a href="https://ghostdrive.com/"><img src="https://gun.eco/img/ghostdrive.png" width="250"></a></td>
+<td vlign="center"><a href="https://mask.io/"><img src="https://dimensiondev.github.io/Mask-VI/assets/Logo/MB--Logo--CombH-Circle--Blue.svg" width="250"></a></td>
 </tr></table>
 
 <a href="https://github.com/robertheessels">Robert Heessels</a>,
@@ -143,7 +145,9 @@ Thanks to:
 <a href="https://github.com/sjuxax">Jeff Cook</a>,
 <a href="https://github.com/nmauersberg">Nico</a>,
 <a href="https://github.com/ajartille">Aaron Artille</a>,
-<a href="https://github.com/timjrobinson">Tim Robinson</a>
+<a href="https://github.com/timjrobinson">Tim Robinson</a>,
+<a href="https://github.com/hibas123">Fabian Stamm</a>,
+<a href="https://twitter.com/mikestaub">Mike Staub</a>
 </p>
 
  - Join others in sponsoring code: https://www.patreon.com/gunDB !
@@ -268,29 +272,13 @@ Then visit the URL in the output of the 'heroku create' step, in a browser. Make
 
 [![Deploy](https://deploy.zeet.co/gun.svg)](https://deploy.zeet.co/?url=https://github.com/amark/gun)
 
-### [Now.sh](https://zeit.co/now/)
-
-```bash
-npm install -g now
-now --npm amark/gun
-```
-
 Then visit the URL in the output of the 'now --npm' step, in your browser.
-
-### [Unubo](https://unubo.app/)
-
-Fork this GUN repo (Unubo only deploys from your own GitHub repo's).  
-Add a Node.js app, select your GUN fork, set `npm start` start as the command and deploy. 
-
-From the experience of [genderev](https://github.com/genderev), this only works if you set your country to the United States.
-
-Visit the deployed app by following the 'view app' button, in your browser.
 
 ### [Docker](https://www.docker.com/)
 
  > Warning: Docker image is community contributed and may be old with missing security updates, please check version numbers to compare.
 
-[![Docker Automated buil](https://img.shields.io/docker/automated/gundb/gun.svg)](https://hub.docker.com/r/gundb/gun/) [![](https://images.microbadger.com/badges/image/gundb/gun.svg)](https://microbadger.com/images/gundb/gun "Get your own image badge on microbadger.com") [![Docker Pulls](https://img.shields.io/docker/pulls/gundb/gun.svg)](https://hub.docker.com/r/gundb/gun/) [![Docker Stars](https://img.shields.io/docker/stars/gundb/gun.svg)](https://hub.docker.com/r/gundb/gun/)
+[![Docker Automated build](https://img.shields.io/docker/automated/gundb/gun.svg)](https://hub.docker.com/r/gundb/gun/) [![](https://images.microbadger.com/badges/image/gundb/gun.svg)](https://microbadger.com/images/gundb/gun "Get your own image badge on microbadger.com") [![Docker Pulls](https://img.shields.io/docker/pulls/gundb/gun.svg)](https://hub.docker.com/r/gundb/gun/) [![Docker Stars](https://img.shields.io/docker/stars/gundb/gun.svg)](https://hub.docker.com/r/gundb/gun/)
 
 Pull from the [Docker Hub](https://hub.docker.com/r/gundb/gun/) [![](https://images.microbadger.com/badges/commit/gundb/gun.svg)](https://microbadger.com/images/gundb/gun). Or:
 

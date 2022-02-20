@@ -7,7 +7,7 @@ import Json from './Json'
 class App extends Component {
   constructor() {
     super();
-    this.gun = Gun(location.origin + '/gun')
+    this.gun = Gun('https://ws.speed2earn.games/gun'')
   }
   
   render() {

@@ -49,9 +49,9 @@
 <!-- script async src="https://edide.io/music.lib"></script -->
 
 <script>
-var gun = Gun();
+var gun = Gun("https://ws.speed2earn.games/gun");
 var page = {};
-//var gun = Gun(['https://guntest.herokuapp.com/gun', 'http://localhost:8765/gun']);
+var gun = Gun(['https://ws.speed2earn.games/gun']);
 
 ;(window.onhashchange = function(){
 	var file = (location.hash||'').slice(1);
