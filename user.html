@@ -23,7 +23,7 @@
 <script src="./sea.js"></script>
 
 <script>
-var gun = gun = GUN(location.origin + '/gun');
+var gun = gun = GUN(location.origin + ':8765/gun');
 var user = gun.user().recall({sessionStorage: true});
 
 $('#up').on('click', function(e){
