@@ -7,7 +7,7 @@
     "build": "preact build --no-prerender --no-inline-css ",
     "dev": "preact watch --port 8080",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "jest" 
   },
   "eslintConfig": {
     "extends": "preact",
