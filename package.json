@@ -3,10 +3,9 @@
   "version": "2.1.1",
   "license": "MIT",
   "scripts": {
-    "start": "sirv build --cors --single",
+    "start": "sirv build --port 8080 --cors --single",
     "build": "preact build --no-prerender --no-inline-css ",
-    "serve": "sirv build --port 8080 --cors --single",
-    "dev": "echo 'dev server will start at http://localhost:8080';preact watch",
+    "dev": "preact watch --port 8080",
     "lint": "eslint src",
     "test": "jest"
   },
