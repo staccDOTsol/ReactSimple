@@ -3,8 +3,8 @@
   "version": "2.1.1",
   "license": "MIT",
   "scripts": {
-    "start": "sirv build --port 8080 --cors --single",
-    "build": "preact build --no-prerender --no-inline-css ",
+    "start": "preact watch --port 8080",
+    "build": "echo aha",
     "dev": "preact watch --port 8080",
     "lint": "eslint src"
   },
