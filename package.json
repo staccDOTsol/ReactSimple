@@ -3,9 +3,9 @@
   "version": "2.1.1",
   "license": "MIT",
   "scripts": {
-    "start": "preact watch --port 8080",
+    "start": "PORT=8080 preact watch --port 8080",
     "build": "echo aha",
-    "dev": "preact watch --port 8080",
+    "dev": "PORT=8080 preact watch --port 8080",
     "lint": "eslint src"
   },
   "eslintConfig": {
