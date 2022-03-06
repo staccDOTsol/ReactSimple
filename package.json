@@ -6,8 +6,7 @@
     "start": "sirv build --port 8080 --cors --single",
     "build": "preact build --no-prerender --no-inline-css ",
     "dev": "preact watch --port 8080",
-    "lint": "eslint src",
-    "test": "jest" 
+    "lint": "eslint src"
   },
   "eslintConfig": {
     "extends": "preact",
@@ -36,8 +35,6 @@
     "enzyme-adapter-preact-pure": "^3.1.0",
     "eslint": "^7.32.0",
     "eslint-config-preact": "^1.1.4",
-    "jest": "^27.0.6",
-    "jest-preset-preact": "^4.0.5",
     "preact-cli": "^3.2.2",
     "sirv-cli": "1.0.14",
     "webpack-build-notifier": "^2.3.0"
