@@ -2261,9 +2261,9 @@
     webpack-dev-server "^3.11.2"
 
 "@solana/spl-token-registry@^0.2.2130":
-  version "0.2.2730"
-  resolved "https://registry.yarnpkg.com/@solana/spl-token-registry/-/spl-token-registry-0.2.2730.tgz#fa687c4b35a013dc8b58552225dd983469f49464"
-  integrity sha512-CtiA0bpmDjwpRISQI/5LPt9girgQaQ/WrQ6rc/NE8pmq0eh78/HTHSrlHmq3J/aZYyN4eBplC4s2xuN+exY9Bw==
+  version "0.2.2731"
+  resolved "https://registry.yarnpkg.com/@solana/spl-token-registry/-/spl-token-registry-0.2.2731.tgz#d4916aec26566563b64150cd4f7eea12b8637c64"
+  integrity sha512-sMtJ3lehaXs/OWp+AEtYBtEKkujcBQ6qWRvz7tTlL7P8f/tV3wW1Xnb9jTSCxRWbF0F3Ty+997Q1A4E4HDhrCg==
   dependencies:
     cross-fetch "3.0.6"
 
@@ -12600,6 +12600,15 @@ sirv@^1.0.13, sirv@^1.0.7:
     mrmime "^1.0.0"
     totalist "^1.0.0"
 
+sirv@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/sirv/-/sirv-2.0.2.tgz#128b9a628d77568139cff85703ad5497c46a4760"
+  integrity sha512-4Qog6aE29nIjAOKe/wowFTxOdmbEZKb+3tsLljaBRzJwtqto0BChD2zzH0LhgCSXiI+V7X+Y45v14wBZQ1TK3w==
+  dependencies:
+    "@polka/url" "^1.0.0-next.20"
+    mrmime "^1.0.0"
+    totalist "^3.0.0"
+
 sisteransi@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
@@ -13489,6 +13498,11 @@ totalist@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/totalist/-/totalist-1.1.0.tgz#a4d65a3e546517701e3e5c37a47a70ac97fe56df"
   integrity sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==
+
+totalist@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/totalist/-/totalist-3.0.0.tgz#4ef9c58c5f095255cdc3ff2a0a55091c57a3a1bd"
+  integrity sha512-eM+pCBxXO/njtF7vdFsHuqb+ElbxqtI4r5EAvk6grfAFyJ6IvWlSkfZ5T9ozC6xWw3Fj1fGoSmrl0gUs46JVIw==
 
 tough-cookie@^2.3.3, tough-cookie@^2.4.3, tough-cookie@~2.5.0:
   version "2.5.0"
